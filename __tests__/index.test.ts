@@ -31,7 +31,7 @@ describe("index", () => {
         it("gets the default when no project key is provided", () => {
             process.env[`INPUT_${name.replace(/ /g, '_').toUpperCase()}`] = "";
             const regex = getRegex();
-            let defaultRegex = /(?<=^|[a-z]\-|[\s\p{Punct}&&[^\-]])([A-Z][A-Z0-9_]*-\d+)(?![^\W_])(\s)+(.)+/;
+            let defaultRegex = /(?<=^|[a-z]\-|[\s\p{Punct}&&[^\-]*])\W?([A-Z][A-Z0-9_]*-\d+)\W?(?![^\W_])(\s)+(.)+/;
             expect(regex).toEqual(defaultRegex);
             expect(regex.test("PR-4 this is valid")).toBe(true);
         });
