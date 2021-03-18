@@ -84,7 +84,7 @@ function run() {
     });
 }
 function getRegex() {
-    var regex = /(?<=^|[a-z]\-|[\s\p{Punct}&&[^\-]])([A-Z][A-Z0-9_]*-\d+)(?![^\W_])(\s)+(.)+/;
+    var regex = /(?<=^|[a-z]\-|[\s\p{Punct}&&[^\-]*])\W?([A-Z][A-Z0-9_]*-\d+)\W?(?![^\W_])(\s)+(.)+/;
     var projectKey = core.getInput("projectKey", { required: false });
     if (projectKey && projectKey !== "") {
         core.debug("Project Key " + projectKey);

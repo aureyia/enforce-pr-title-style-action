@@ -1,6 +1,6 @@
 {
   "name": "@aureyia/enforce-pr-title-style-action",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Checks that a Pull Request includes a Jira Issue key",
   "main": "dist/index.js",
   "scripts": {
