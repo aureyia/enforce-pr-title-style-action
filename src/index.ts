@@ -38,7 +38,7 @@ export function getRegex() {
 }
 
 export function getPullRequestTitle() {
-    let pull_request = github.context.payload.pull_request;
+    const pull_request = github.context.payload.pull_request;
     core.debug(`Pull Request: ${JSON.stringify(github.context.payload.pull_request)}`);
     if (pull_request == undefined || pull_request.title == undefined) {
         throw new Error("This action should only be run with Pull Request Events");
